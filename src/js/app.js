@@ -17,14 +17,9 @@ App = {
 
   initContract: function() {
     $.getJSON('MyToken.json', function(data) {
-      // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var TutorialTokenArtifact = data;
       App.contracts.TutorialToken = TruffleContract(TutorialTokenArtifact);
-
-      // Set the provider for our contract.
       App.contracts.TutorialToken.setProvider(App.web3Provider);
-
-      // Use our contract to retieve and mark the adopted pets.
       return App.getBalances();
     });
 
@@ -67,23 +62,17 @@ App = {
 
   getBalances: function() {
     console.log('Getting balances...');
-
     var tutorialTokenInstance;
-
     App.web3js.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
       }
-
       var account = accounts[0];
-
       App.contracts.TutorialToken.deployed().then(function(instance) {
         tutorialTokenInstance = instance;
-
         return tutorialTokenInstance.balanceOf(account);
       }).then(function(result) {
         balance = result.c[0];
-
         $('#TTBalance').text(balance);
       }).catch(function(err) {
         console.log(err.message);
