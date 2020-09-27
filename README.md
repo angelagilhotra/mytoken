@@ -8,6 +8,8 @@ Built upon, https://www.trufflesuite.com/boxes/tutorialtoken
 
 [![Watch the video](https://img.youtube.com/vi/QAO7YxF7hSk/3.jpg)](https://youtu.be/QAO7YxF7hSk)
 
+Starts at [53:57](https://youtu.be/QAO7YxF7hSk?list=PLslsfan1R_z3-nrXn1rgWOR2TFtUe2ptl&t=3217)
+
 ## Usage
 
 ```
